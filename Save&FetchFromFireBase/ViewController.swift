@@ -15,10 +15,28 @@ class ViewController: UIViewController {
     @IBOutlet var authorTextField: UITextField!
     
     var docRef: DocumentReference!
+    var quoteListener: ListenerRegistration!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         docRef = Firestore.firestore().document("sampleData/Inspiration")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        quoteListener = docRef.addSnapshotListener { (docSnapshot, error) in
+            guard let docSnapshot = docSnapshot, docSnapshot.exists else { return }
+            let myData = docSnapshot.data()
+            let latestQuote = myData?["quote"] as? String ?? ""
+            let quoteAuthor = myData?["author"] as? String ?? "(none)"
+            self.quoteLabel.text = "\"\(latestQuote)\" -- \(quoteAuthor)"
+            
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        quoteListener.remove()
     }
     
     @IBAction func saveTapped(_ sender: UIButton) {
