@@ -32,12 +32,18 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KHF-r8-Ezj">
-                                <rect key="frame" x="334" y="302" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KHF-r8-Ezj">
+                                <rect key="frame" x="340" y="298.5" width="34" height="30"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="saveTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CMR-ZT-Ybs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGI-ej-lOF">
+                                <rect key="frame" x="335" y="348.5" width="39" height="30"/>
+                                <state key="normal" title="Fetch"/>
+                                <connections>
+                                    <action selector="fetchTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hx7-oo-q7L"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -45,12 +51,16 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="b5J-NY-zCh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="2kN-kL-OQc"/>
+                            <constraint firstItem="KHF-r8-Ezj" firstAttribute="top" secondItem="mIE-Na-hM2" secondAttribute="bottom" constant="40" id="4MW-Zk-8y3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KHF-r8-Ezj" secondAttribute="trailing" constant="40" id="9MS-w9-KT6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="b5J-NY-zCh" secondAttribute="trailing" constant="40" id="D4B-MZ-AdF"/>
                             <constraint firstItem="mIE-Na-hM2" firstAttribute="top" secondItem="b5J-NY-zCh" secondAttribute="bottom" constant="40" id="EFT-9K-fke"/>
+                            <constraint firstItem="aGI-ej-lOF" firstAttribute="top" secondItem="KHF-r8-Ezj" secondAttribute="bottom" constant="20" id="I0c-f9-OZk"/>
                             <constraint firstItem="b5J-NY-zCh" firstAttribute="top" secondItem="LRR-AU-I24" secondAttribute="bottom" constant="40" id="P3M-Qv-0Hc"/>
                             <constraint firstItem="LRR-AU-I24" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="Vbo-HY-x2h"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mIE-Na-hM2" secondAttribute="trailing" constant="40" id="XEz-vK-SAm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LRR-AU-I24" secondAttribute="trailing" constant="40" id="cqY-mL-3jm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aGI-ej-lOF" secondAttribute="trailing" constant="40" id="pzY-tH-XB9"/>
                             <constraint firstItem="LRR-AU-I24" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="qQW-0s-ZPi"/>
                             <constraint firstItem="mIE-Na-hM2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="ttj-St-mGv"/>
                         </constraints>

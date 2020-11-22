@@ -34,6 +34,18 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func fetchTapped(_ sender: UIButton) {
+        docRef.getDocument { [self] (docSnapshot, error) in
+            guard let docSnapshot = docSnapshot, docSnapshot.exists else { return }
+            let myData = docSnapshot.data()
+            let latestQuote = myData?["quote"] as? String ?? ""
+            let quoteAuthor = myData?["author"] as? String ?? "(none)"
+            self.quoteLabel.text = "\"\(latestQuote)\" -- \(quoteAuthor)"
+            
+        }
+    }
+    
+    
 
 
 }
