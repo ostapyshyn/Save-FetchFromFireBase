@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -83,7 +83,6 @@
 				9395084A9E005767564C07AD /* Pods-Save&FetchFromFireBase.debug.xcconfig */,
 				DE715D8F50434EE400DC6D60 /* Pods-Save&FetchFromFireBase.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -107,6 +106,7 @@
 				0BE26383256A684400995161 /* Frameworks */,
 				0BE26384256A684400995161 /* Resources */,
 				1DF284CF34EE92EB71AEF23D /* [CP] Embed Pods Frameworks */,
+				67D4A3105685FC276B31CF3D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -201,6 +201,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Save&FetchFromFireBase/Pods-Save&FetchFromFireBase-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		67D4A3105685FC276B31CF3D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Save&FetchFromFireBase/Pods-Save&FetchFromFireBase-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Save&FetchFromFireBase/Pods-Save&FetchFromFireBase-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Save&FetchFromFireBase/Pods-Save&FetchFromFireBase-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

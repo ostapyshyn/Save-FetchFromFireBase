@@ -7,8 +7,9 @@
 
 import UIKit
 import Firebase
+import GoogleSignIn
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, GIDSignInDelegate {
     
     @IBOutlet var quoteLabel: UILabel!
     @IBOutlet var quoteTextField: UITextField!
@@ -20,6 +21,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        GIDSignIn.sharedInstance()?.delegate = self
         docRef = Firestore.firestore().document("sampleData/Inspiration")
     }
     
@@ -62,6 +64,19 @@ class ViewController: UIViewController {
             
         }
     }
+    
+    @IBAction func googleLoginTap(_ sender: UIButton) {
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        GIDSignIn.sharedInstance()?.signIn()
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if error != nil {
+            print(user.userID!)
+        }
+    }
+    
+    
     
     
 

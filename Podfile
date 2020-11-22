@@ -7,6 +7,7 @@ target 'Save&FetchFromFireBase' do
   
   # Pods for Save&FetchFromFireBase
   pod 'Firebase/Firestore'
+  pod 'GoogleSignIn'
 
 
 end
