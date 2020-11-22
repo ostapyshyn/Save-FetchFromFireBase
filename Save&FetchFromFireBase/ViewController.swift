@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController {
     
@@ -13,13 +14,24 @@ class ViewController: UIViewController {
     @IBOutlet var quoteTextField: UITextField!
     @IBOutlet var authorTextField: UITextField!
     
+    var docRef: DocumentReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        docRef = Firestore.firestore().document("sampleData/Inspiration")
     }
     
     @IBAction func saveTapped(_ sender: UIButton) {
-        
+        guard let quoteText = quoteTextField.text, !quoteText.isEmpty else { return }
+        guard let quoteAuthor = authorTextField.text, !quoteAuthor.isEmpty else { return }
+        let dataToSave: [String: Any] = ["quote": quoteText, "author": quoteAuthor]
+        docRef.setData(dataToSave) { error in
+            if let error = error {
+                print("Error: ", error.localizedDescription)
+            } else {
+                print("Data has been saved!")
+            }
+        }
     }
     
 
